@@ -93,12 +93,13 @@ const Footer = () => {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/919876543210"
-        className="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-colors z-50"
+        href="https://wa.me/917736890053"
+        className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 z-50 animate-pulse"
         target="_blank"
         rel="noopener noreferrer"
+        title="Chat with us on WhatsApp"
       >
-        <MessageCircle size={24} />
+        <MessageCircle size={24} fill="currentColor" />
       </a>
     </footer>
   );
