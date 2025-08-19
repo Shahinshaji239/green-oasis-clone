@@ -1,16 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logoImage from "@/assets/green-oasis-logo.png";
 
 const Header = () => {
+  const location = useLocation();
+  
   const navItems = [
-    "HOME",
-    "ABOUT",
-    "DESTINATION", 
-    "SERVICES",
-    "CONTACT",
-    "TESTIMONIALS",
-    "BLOG",
+    { name: "HOME", path: "/" },
+    { name: "ABOUT", path: "/about" },
+    { name: "DESTINATION", path: "/destinations" }, 
+    { name: "SERVICES", path: "/services" },
+    { name: "CONTACT", path: "/contact" },
+    { name: "TESTIMONIALS", path: "/testimonials" },
+    { name: "BLOG", path: "/blog" },
   ];
 
   return (
@@ -37,7 +40,7 @@ const Header = () => {
 
         {/* Main navigation */}
         <div className="flex items-center justify-between py-4">
-          <div className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img 
               src={logoImage} 
               alt="Green Oasis" 
@@ -47,26 +50,32 @@ const Header = () => {
               <h1 className="text-xl font-bold text-primary">Green Oasis</h1>
               <p className="text-xs text-muted-foreground">Tours & Travels</p>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => (
-              <a
-                key={item}
-                href="#"
-                className="text-sm font-medium text-foreground hover:text-primary transition-colors duration-300"
+              <Link
+                key={item.name}
+                to={item.path}
+                className={`text-sm font-medium transition-colors duration-300 ${
+                  location.pathname === item.path 
+                    ? "text-primary font-semibold" 
+                    : "text-foreground hover:text-primary"
+                }`}
               >
-                {item}
-              </a>
+                {item.name}
+              </Link>
             ))}
           </nav>
 
           {/* Contact Button */}
           <div className="flex items-center gap-4">
-            <Button variant="contact" className="hidden md:flex">
-              CONTACT US
-            </Button>
+            <Link to="/contact">
+              <Button variant="contact" className="hidden md:flex">
+                CONTACT US
+              </Button>
+            </Link>
             <button className="lg:hidden">
               <Menu size={24} />
             </button>

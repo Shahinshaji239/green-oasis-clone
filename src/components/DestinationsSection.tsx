@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import andamanImage from "@/assets/destinations/andaman.jpg";
 import lakshadweepImage from "@/assets/destinations/lakshadweep.jpg";
 import maldivesImage from "@/assets/destinations/maldives.jpg";
@@ -7,12 +8,12 @@ import thailandImage from "@/assets/destinations/thailand.jpg";
 import turkeyImage from "@/assets/destinations/turkey.jpg";
 
 const destinations = [
-  { name: "Andaman", image: andamanImage },
-  { name: "Lakshadweep", image: lakshadweepImage },
-  { name: "Maldives", image: maldivesImage },
-  { name: "UAE", image: uaeImage },
-  { name: "Thailand", image: thailandImage },
-  { name: "Turkey", image: turkeyImage },
+  { name: "Andaman", image: andamanImage, slug: "andaman" },
+  { name: "Lakshadweep", image: lakshadweepImage, slug: "lakshadweep" },
+  { name: "Maldives", image: maldivesImage, slug: "maldives" },
+  { name: "UAE", image: uaeImage, slug: "uae" },
+  { name: "Thailand", image: thailandImage, slug: "thailand" },
+  { name: "Turkey", image: turkeyImage, slug: "turkey" },
 ];
 
 const DestinationsSection = () => {
@@ -23,15 +24,18 @@ const DestinationsSection = () => {
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground">
             Our Destinations
           </h2>
-          <Button variant="outline" className="hidden md:flex">
-            View All
-          </Button>
+          <Link to="/destinations">
+            <Button variant="outline" className="hidden md:flex">
+              View All
+            </Button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {destinations.map((destination, index) => (
-            <div
+            <Link
               key={destination.name}
+              to={`/destinations/${destination.slug}`}
               className="group cursor-pointer"
             >
               <div className="relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300">
@@ -47,14 +51,16 @@ const DestinationsSection = () => {
                   </h3>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
         <div className="text-center mt-8 md:hidden">
-          <Button variant="outline">
-            View All Destinations
-          </Button>
+          <Link to="/destinations">
+            <Button variant="outline">
+              View All Destinations
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
