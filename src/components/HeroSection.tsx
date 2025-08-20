@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import heroBanner from "@/assets/hero-banner.jpg";
 
 const HeroSection = () => {
@@ -9,19 +10,21 @@ const HeroSection = () => {
           {/* Hero Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-primary font-medium text-lg">GREEN OASIS</p>
+              <p className="text-primary font-medium text-lg">LA VIDA HOLIDAYS</p>
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
                 Explore Your Dream Destination With{" "}
-                <span className="text-primary">Green Oasis</span>
+                <span className="text-primary">La Vida Holidays</span>
               </h1>
               <p className="text-lg text-muted-foreground max-w-md">
                 Explore the wonders of the world with the best Travel Agency in Kerala.
               </p>
             </div>
             
-            <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-              Contact Now
-            </Button>
+            <Link to="/contact">
+              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
+                Contact Now
+              </Button>
+            </Link>
           </div>
 
           {/* Hero Image */}

@@ -25,11 +25,11 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
                 <Phone size={14} />
-                <span>+91 9876543210</span>
+                <span>+91 7736890053</span>
               </div>
               <div className="flex items-center gap-1">
                 <Mail size={14} />
-                <span>info@greenoasistravel.com</span>
+                <span>info@lavidaholidays.com</span>
               </div>
             </div>
             <div className="hidden md:block">
@@ -43,11 +43,11 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3">
             <img 
               src={logoImage} 
-              alt="Green Oasis" 
+              alt="La Vida Holidays" 
               className="h-12 w-12 object-contain"
             />
             <div>
-              <h1 className="text-xl font-bold text-primary">Green Oasis</h1>
+              <h1 className="text-xl font-bold text-primary">La Vida Holidays</h1>
               <p className="text-xs text-muted-foreground">Tours & Travels</p>
             </div>
           </Link>

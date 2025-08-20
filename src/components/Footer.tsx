@@ -11,11 +11,11 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <img 
                 src={logoImage} 
-                alt="Green Oasis" 
+                alt="La Vida Holidays" 
                 className="h-10 w-10 object-contain brightness-0 invert"
               />
               <div>
-                <h3 className="text-xl font-bold">Green Oasis</h3>
+                <h3 className="text-xl font-bold">La Vida Holidays</h3>
                 <p className="text-sm opacity-80">Tours & Travels</p>
               </div>
             </div>
@@ -46,17 +46,18 @@ const Footer = () => {
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <span className="opacity-90">
-                  Green Oasis Travel Agency<br />
-                  Kerala, India
+                  La Vida Holidays<br />
+                  Gyan Pravesh, Old Block, RCSS,<br />
+                  Kalamassery, Ernakulam, Kerala
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Phone size={16} />
-                <span className="opacity-90">+91 9876543210</span>
+                <span className="opacity-90">+91 7736890053</span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} />
-                <span className="opacity-90">info@greenoasistravel.com</span>
+                <span className="opacity-90">info@lavidaholidays.com</span>
               </div>
             </div>
           </div>
@@ -86,7 +87,7 @@ const Footer = () => {
 
         <div className="border-t border-white/20 mt-8 pt-8 text-center">
           <p className="text-sm opacity-80">
-            © 2024 Green Oasis Travel Agency. All rights reserved.
+            © 2024 La Vida Holidays. All rights reserved.
           </p>
         </div>
       </div>
