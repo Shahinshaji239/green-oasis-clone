@@ -41,13 +41,12 @@ const HeroSection = () => {
               <div className="relative h-full w-full">
                 <video
                   className="absolute inset-0 h-full w-full object-cover"
+                  src={video.src}
                   autoPlay
                   muted
                   loop
                   playsInline
-                >
-                  <source src={video.src} type="video/mp4" />
-                </video>
+                />
                 
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/40"></div>
