@@ -1,53 +1,99 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import heroBanner from "@/assets/hero-banner.jpg";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const videos = [
+    {
+      src: "https://videos.pexels.com/video-files/4992409/4992409-uhd_2560_1440_25fps.mp4",
+      title: "Tropical Paradise",
+      description: "Discover pristine beaches and crystal clear waters"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/4992737/4992737-uhd_2560_1440_25fps.mp4", 
+      title: "Mountain Adventures",
+      description: "Experience breathtaking mountain landscapes"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/4992764/4992764-uhd_2560_1440_25fps.mp4",
+      title: "Cultural Journeys",
+      description: "Immerse yourself in rich cultural experiences"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % videos.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [videos.length]);
+
   return (
-    <section className="relative min-h-[600px] bg-gradient-to-r from-primary/10 to-primary/5 overflow-hidden">
-      <div className="container mx-auto px-4 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Hero Content */}
-          <div className="space-y-8">
-            <div className="space-y-4">
-              <p className="text-primary font-medium text-lg">LA VIDA HOLIDAYS</p>
-              <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
-                Explore Your Dream Destination With{" "}
-                <span className="text-primary">La Vida Holidays</span>
-              </h1>
-              <p className="text-lg text-muted-foreground max-w-md">
-                Explore the wonders of the world with the best Travel Agency in Kerala.
-              </p>
-            </div>
-            
-            <Link to="/contact">
-              <Button variant="hero" size="lg" className="text-lg px-8 py-4">
-                Contact Now
-              </Button>
-            </Link>
-          </div>
+    <section className="relative h-screen w-full overflow-hidden">
+      <Carousel className="h-full w-full">
+        <CarouselContent className="h-full">
+          {videos.map((video, index) => (
+            <CarouselItem key={index} className="h-full p-0">
+              <div className="relative h-full w-full">
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src={video.src} type="video/mp4" />
+                </video>
+                
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40"></div>
+                
+                {/* Content */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="text-center text-white z-10 max-w-4xl px-4">
+                    <p className="text-primary-foreground font-medium text-lg mb-4 animate-fade-in">
+                      LA VIDA HOLIDAYS
+                    </p>
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-fade-in">
+                      Explore Your Dream Destination With{" "}
+                      <span className="text-primary">La Vida Holidays</span>
+                    </h1>
+                    <p className="text-xl md:text-2xl mb-8 text-white/90 animate-fade-in">
+                      {video.description}
+                    </p>
+                    
+                    <Link to="/contact">
+                      <Button variant="hero" size="lg" className="text-lg px-8 py-4 animate-fade-in">
+                        Contact Now
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        
+        <CarouselPrevious className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30" />
+        <CarouselNext className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 border-white/30 text-white hover:bg-white/30" />
+      </Carousel>
 
-          {/* Hero Image */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-              <img
-                src={heroBanner}
-                alt="Beautiful travel destination"
-                className="w-full h-[500px] object-cover transform hover:scale-105 transition-transform duration-700"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-            </div>
-            
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/30 rounded-full blur-xl"></div>
-          </div>
-        </div>
+      {/* Video indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex space-x-3 z-20">
+        {videos.map((_, index) => (
+          <button
+            key={index}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentIndex ? "bg-white" : "bg-white/50"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
       </div>
-
-      {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-primary/5 to-transparent"></div>
-      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-gradient-to-t from-secondary/10 to-transparent"></div>
     </section>
   );
 };
