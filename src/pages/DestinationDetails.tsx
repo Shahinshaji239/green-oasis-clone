@@ -11,84 +11,6 @@ import uaeImage from "@/assets/destinations/uae.jpg";
 import thailandImage from "@/assets/destinations/thailand.jpg";
 import turkeyImage from "@/assets/destinations/turkey.jpg";
 
-const packages = {
-  "one-day": [
-    "Fantasy Park & Malampuzha",
-    "Silver Storm",
-    "Dream World",
-    "Bhoothathankettu Dam & Thumboormuzhi",
-    "Kochi City Sightseeing",
-    "Alleppey",
-    "Peechi Dam to Thrissur Zoo",
-    "Peechi Dam, Nelliampathu",
-    "Athirapilly, Vazhachal, Ezhattumuqam",
-    "Trivandrum",
-    "Malampuzha & Dhoni",
-    "Vagamon Hills & Parunthumpara View Point",
-    "Munnar",
-    "Wayanad",
-    "Ooty Hills",
-    "Kodaikanal Hills",
-    "Munnar & Thekkady",
-    "Trivandrum & Kanyakumari",
-    "Yeracaud Hills",
-    "Valapai Hills",
-    "Ponmudi & Trivandrum",
-    "Kolli Hills",
-    "Valparai Hills",
-    "Coorg (Kodagu)",
-    "Mysore",
-    "Bangalore",
-    "Hogenakkal Falls"
-  ],
-  "two-days": [
-    "Wayanad",
-    "Ooty Hills",
-    "Kodaikanal Hills",
-    "Munnar & Thekkady",
-    "Trivandrum & Kanyakumari",
-    "Yeracaud Hills",
-    "Valapai Hills",
-    "Ponmudi & Trivandrum",
-    "Kolli Hills",
-    "Valparai Hills",
-    "Coorg (Kodagu)",
-    "Mysore",
-    "Bangalore",
-    "Hogenakkal Falls",
-    "Chikkamagaluru & Coorg"
-  ],
-  "three-days": [
-    "Mysore & Ooty",
-    "Wayanad & Mysore",
-    "Hogenakkal Falls & Yercaud Hills",
-    "Chennai & Pondicherry",
-    "Mysore & Coorg (Kodagu)",
-    "Coorg (Kodagu) & Chikkamagaluru",
-    "Thekkady, Kodaikanal & Rameshwaram",
-    "Chennai, Mahabalipuram, Pondicherry & Kanchipuram"
-  ],
-  "four-days": [
-    "Bangalore, Mysore & Coorg (Kodagu)",
-    "Coorg (Kodagu), Belur & Chikkamagaluru",
-    "Coorg (Kodagu), Chikkamagaluru & Dandeli",
-    "Maple Beach (St. Mary's Island), Gokarna Beach & Dandeli",
-    "Murudeshwar Beach, Gokarna Beach & Dandeli"
-  ],
-  "five-days": [
-    "Goa (Grand Island & Dudhsagar Waterfalls)",
-    "Goa",
-    "Goa & Dandeli",
-    "Goa & Malvan"
-  ],
-  "six-days": [
-    "Hyderabad"
-  ],
-  "eight-days": [
-    "Delhi, Agra & Jaipur",
-    "Kulu, Manali & Kasol"
-  ]
-};
 
 const destinationData = {
   andaman: {
@@ -235,8 +157,8 @@ const DestinationDetails = () => {
     );
   }
 
-  const handleBookNow = (packageName: string) => {
-    const message = `Hi La Vida Holidays! I'm interested in booking the ${packageName} package for ${destination.name}. Could you please provide more details?`;
+  const handleViewPackages = () => {
+    const message = `Hi La Vida Holidays! I'm interested in packages for ${destination.name}. Could you please share available options?`;
     const whatsappUrl = `https://wa.me/917736890053?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -347,37 +269,22 @@ const DestinationDetails = () => {
                 </div>
               </section>
 
-              {/* All Available Packages */}
+              {/* Call to Action */}
               <section>
-                <h2 className="text-2xl font-bold text-foreground mb-6">Available Packages</h2>
-                <div className="space-y-6">
-                  {Object.entries(packages).map(([duration, packageList]) => (
-                    <Card key={duration} className="overflow-hidden">
-                      <CardHeader className="bg-primary/5">
-                        <CardTitle className="text-primary capitalize">
-                          {duration.replace('-', ' ')} Packages
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="p-6">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                          {packageList.map((packageName, index) => (
-                            <div
-                              key={index}
-                              className="p-4 border rounded-lg hover:shadow-md transition-shadow cursor-pointer"
-                              onClick={() => handleBookNow(packageName)}
-                            >
-                              <div className="flex items-center justify-between">
-                                <h4 className="font-medium text-foreground text-sm">{packageName}</h4>
-                                <Button size="sm" variant="outline" className="ml-2">
-                                  Book Now
-                                </Button>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+                <div className="text-center bg-primary/5 rounded-lg p-8">
+                  <h2 className="text-2xl font-bold text-foreground mb-4">Ready to Explore {destination.name}?</h2>
+                  <p className="text-muted-foreground mb-6">
+                    Contact our travel experts to create your perfect {destination.name} experience with customized packages.
+                  </p>
+                  <div className="flex gap-4 justify-center">
+                    <Button onClick={handleViewPackages} size="lg">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      View Packages
+                    </Button>
+                    <Button variant="outline" size="lg" onClick={handleCustomPackage}>
+                      Request Custom Package
+                    </Button>
+                  </div>
                 </div>
               </section>
             </div>
@@ -392,10 +299,10 @@ const DestinationDetails = () => {
                 <CardContent className="space-y-4">
                   <Button 
                     className="w-full" 
-                    onClick={handleCustomPackage}
+                    onClick={handleViewPackages}
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
-                    Request Custom Package
+                    View All Packages
                   </Button>
                   <Button 
                     variant="outline" 
