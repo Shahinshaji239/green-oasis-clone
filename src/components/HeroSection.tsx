@@ -8,22 +8,22 @@ const HeroSection = () => {
 
   const videos = [
     {
-      src: "https://videos.pexels.com/video-files/4992409/4992409-uhd_2560_1440_25fps.mp4",
+      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
       title: "Tropical Paradise",
       description: "Discover pristine beaches and crystal clear waters"
     },
     {
-      src: "https://videos.pexels.com/video-files/4992737/4992737-uhd_2560_1440_25fps.mp4", 
+      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4", 
       title: "Mountain Adventures",
       description: "Experience breathtaking mountain landscapes"
     },
     {
-      src: "https://videos.pexels.com/video-files/4992764/4992764-uhd_2560_1440_25fps.mp4",
+      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
       title: "Cultural Journeys",
       description: "Immerse yourself in rich cultural experiences"
     },
     {
-      src: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
+      src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4",
       title: "Kerala Hill Station",
       description: "Journey through the scenic Gap road in Munnar, Kerala"
     }
