@@ -13,124 +13,124 @@ import turkeyImage from "@/assets/destinations/turkey.jpg";
 
 
 const destinationData = {
-  andaman: {
-    name: "Andaman",
-    image: andamanImage,
-    rating: 4.8,
-    duration: "5-7 Days",
-    bestTime: "Oct - May",
-    description: "Discover the pristine beauty of Andaman Islands with crystal clear waters, white sandy beaches, and vibrant marine life. Perfect for water sports, diving, and romantic getaways.",
-    highlights: [
-      "Radhanagar Beach - Asia's Best Beach",
-      "Cellular Jail - Historical Significance",
-      "Scuba Diving & Snorkeling",
-      "Mangrove Kayaking",
-      "Light & Sound Show"
-    ],
-    travelInfo: {
-      duration: "5-7 Days",
-      bestTime: "October to May",
-      groupSize: "2-15 people"
-    }
-  },
-  lakshadweep: {
-    name: "Lakshadweep",
-    image: lakshadweepImage,
-    rating: 4.7,
-    duration: "4-6 Days",
-    bestTime: "Oct - Mar",
-    description: "Experience the untouched beauty of India's coral islands with turquoise lagoons, pristine beaches, and rich marine biodiversity.",
-    highlights: [
-      "Agatti Island - Gateway to Lakshadweep",
-      "Bangaram Island - Coral Paradise",
-      "Water Sports & Diving",
-      "Traditional Island Culture",
-      "Marine Life Sanctuary"
-    ],
-    travelInfo: {
-      duration: "4-6 Days",
-      bestTime: "October to March",
-      groupSize: "2-12 people"
-    }
-  },
-  maldives: {
-    name: "Maldives",
-    image: maldivesImage,
-    rating: 4.9,
-    duration: "4-7 Days",
-    bestTime: "Nov - Apr",
-    description: "Escape to the Maldives for the ultimate luxury tropical experience with overwater villas, world-class resorts, and unparalleled natural beauty.",
-    highlights: [
-      "Overwater Villa Experience",
-      "Male City Tour",
-      "Sunset Dolphin Cruise",
-      "Underwater Restaurant Dining",
-      "Private Beach Access"
-    ],
-    travelInfo: {
-      duration: "4-7 Days",
-      bestTime: "November to April",
-      groupSize: "2-10 people"
-    }
-  },
-  uae: {
-    name: "UAE",
+  hyderabad: {
+    name: "Hyderabad",
     image: uaeImage,
-    rating: 4.6,
-    duration: "4-6 Days",
-    bestTime: "Nov - Mar",
-    description: "Experience the perfect blend of modern luxury and traditional culture in the United Arab Emirates, from Dubai's skyscrapers to Abu Dhabi's heritage.",
+    rating: 4.7,
+    duration: "3-4 Days",
+    bestTime: "Oct - Mar",
+    description: "The City of Pearls, Hyderabad offers a perfect blend of historic charm and modern technology. Famous for its biryani, pearls, and magnificent monuments like Charminar and Golconda Fort.",
     highlights: [
-      "Burj Khalifa & Dubai Mall",
-      "Desert Safari Adventure",
-      "Sheikh Zayed Grand Mosque",
-      "Dubai Marina & JBR Beach",
-      "Gold & Spice Souks"
+      "Charminar - Iconic Monument",
+      "Golconda Fort - Historic Architecture",
+      "Hussain Sagar Lake - Boat Rides", 
+      "Ramoji Film City - World's Largest",
+      "Birla Mandir - Beautiful Temple"
     ],
     travelInfo: {
-      duration: "4-6 Days",
-      bestTime: "November to March",
+      duration: "3-4 Days",
+      bestTime: "October to March",
       groupSize: "2-20 people"
     }
   },
-  thailand: {
-    name: "Thailand",
+  "delhi-agra": {
+    name: "Delhi, Agra",
     image: thailandImage,
-    rating: 4.7,
-    duration: "5-8 Days",
-    bestTime: "Nov - Feb",
-    description: "Discover the Land of Smiles with its rich culture, stunning temples, beautiful beaches, and delicious cuisine that will captivate all your senses.",
+    rating: 4.8,
+    duration: "4-5 Days",
+    bestTime: "Oct - Mar",
+    description: "Experience India's golden triangle with Delhi's bustling streets and historical monuments, plus Agra's world-famous Taj Mahal - a perfect combination of culture and heritage.",
     highlights: [
-      "Grand Palace & Wat Pho Temple",
-      "Phi Phi Islands & Maya Bay",
-      "Floating Markets Experience",
-      "Thai Cooking Classes",
-      "Elephant Sanctuary Visit"
+      "Taj Mahal - Wonder of the World",
+      "Red Fort - Mughal Architecture",
+      "India Gate - War Memorial",
+      "Qutub Minar - UNESCO Site",
+      "Agra Fort - Historic Fortress"
     ],
     travelInfo: {
-      duration: "5-8 Days",
-      bestTime: "November to February",
+      duration: "4-5 Days", 
+      bestTime: "October to March",
       groupSize: "2-25 people"
     }
   },
-  turkey: {
-    name: "Turkey",
+  "kashmir-manali": {
+    name: "Kashmir, Manali",
     image: turkeyImage,
-    rating: 4.8,
-    duration: "6-9 Days",
-    bestTime: "Apr - Jun, Sep - Nov",
-    description: "Journey through Turkey's rich history and stunning landscapes, from the fairy chimneys of Cappadocia to the ancient ruins of Ephesus.",
+    rating: 4.9,
+    duration: "6-8 Days",
+    bestTime: "Apr - Jun, Sep - Oct",
+    description: "Paradise on earth! Experience the breathtaking beauty of Kashmir's valleys and lakes combined with Manali's snow-capped mountains and adventure activities.",
     highlights: [
-      "Hot Air Balloon in Cappadocia",
-      "Hagia Sophia & Blue Mosque",
-      "Pamukkale Thermal Pools",
-      "Ephesus Ancient City",
-      "Grand Bazaar Shopping"
+      "Dal Lake - Shikara Rides",
+      "Gulmarg - Skiing & Gondola",
+      "Solang Valley - Adventure Sports",
+      "Rohtang Pass - Snow Activities",
+      "Mughal Gardens - Scenic Beauty"
     ],
     travelInfo: {
-      duration: "6-9 Days",
-      bestTime: "April to June, September to November",
-      groupSize: "2-30 people"
+      duration: "6-8 Days",
+      bestTime: "April to June, September to October", 
+      groupSize: "2-15 people"
+    }
+  },
+  munnar: {
+    name: "Munnar",
+    image: andamanImage,
+    rating: 4.6,
+    duration: "3-4 Days",
+    bestTime: "Sep - Mar",
+    description: "Kerala's enchanting hill station with rolling tea plantations, misty mountains, and cool climate. Perfect for honeymoons and nature lovers seeking tranquility.",
+    highlights: [
+      "Tea Plantations - Scenic Drives",
+      "Eravikulam National Park",
+      "Mattupetty Dam - Boating",
+      "Echo Point - Nature's Wonder",
+      "Anamudi Peak - Highest in South India"
+    ],
+    travelInfo: {
+      duration: "3-4 Days",
+      bestTime: "September to March",
+      groupSize: "2-12 people"
+    }
+  },
+  kodaikkanal: {
+    name: "Kodaikkanal", 
+    image: lakshadweepImage,
+    rating: 4.5,
+    duration: "3-4 Days",
+    bestTime: "Apr - Jun, Sep - Oct",
+    description: "The Princess of Hill Stations in Tamil Nadu, famous for its star-shaped lake, misty hills, and peaceful atmosphere perfect for romantic getaways.",
+    highlights: [
+      "Kodai Lake - Star Shaped Lake",
+      "Coaker's Walk - Scenic Pathway",
+      "Bryant Park - Botanical Garden",
+      "Pillar Rocks - Natural Formation",
+      "Silver Cascade Falls - Waterfall"
+    ],
+    travelInfo: {
+      duration: "3-4 Days",
+      bestTime: "April to June, September to October",
+      groupSize: "2-15 people"
+    }
+  },
+  goa: {
+    name: "Goa",
+    image: maldivesImage,
+    rating: 4.7,
+    duration: "4-6 Days", 
+    bestTime: "Nov - Feb",
+    description: "India's beach paradise with golden sandy beaches, vibrant nightlife, Portuguese colonial heritage, water sports, and delicious seafood cuisine.",
+    highlights: [
+      "Baga & Calangute Beaches",
+      "Old Goa Churches - UNESCO Sites",
+      "Dudhsagar Falls - Majestic Waterfall",
+      "Water Sports & Beach Activities",
+      "Night Markets & Beach Shacks"
+    ],
+    travelInfo: {
+      duration: "4-6 Days",
+      bestTime: "November to February",
+      groupSize: "2-20 people"
     }
   }
 };

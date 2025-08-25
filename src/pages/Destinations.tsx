@@ -99,40 +99,40 @@ const Destinations = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <DestinationCard 
-              name="Andaman" 
-              slug="andaman"
-              image="/src/assets/destinations/andaman.jpg"
-              description="Pristine beaches, crystal clear waters, and vibrant marine life await you in this tropical paradise."
-            />
-            <DestinationCard 
-              name="Lakshadweep" 
-              slug="lakshadweep"
-              image="/src/assets/destinations/lakshadweep.jpg"
-              description="Experience untouched coral islands with turquoise lagoons and rich marine biodiversity."
-            />
-            <DestinationCard 
-              name="Maldives" 
-              slug="maldives"
-              image="/src/assets/destinations/maldives.jpg"
-              description="Ultimate luxury tropical experience with overwater villas and world-class resorts."
-            />
-            <DestinationCard 
-              name="UAE" 
-              slug="uae"
+              name="Hyderabad" 
+              slug="hyderabad"
               image="/src/assets/destinations/uae.jpg"
-              description="Perfect blend of modern luxury and traditional culture in the United Arab Emirates."
+              description="The City of Pearls offers rich history, delicious biryani, magnificent monuments, and modern IT culture in perfect harmony."
             />
             <DestinationCard 
-              name="Thailand" 
-              slug="thailand"
+              name="Delhi, Agra" 
+              slug="delhi-agra"
               image="/src/assets/destinations/thailand.jpg"
-              description="Discover the Land of Smiles with its rich culture, stunning temples, and beautiful beaches."
+              description="Experience India's capital and the iconic Taj Mahal in this golden triangle tour featuring rich Mughal heritage."
             />
             <DestinationCard 
-              name="Turkey" 
-              slug="turkey"
+              name="Kashmir, Manali" 
+              slug="kashmir-manali"
               image="/src/assets/destinations/turkey.jpg"
-              description="Journey through rich history and stunning landscapes, from Cappadocia to ancient ruins."
+              description="Paradise on earth with snow-capped mountains, pristine valleys, beautiful lakes, and adventure activities."
+            />
+            <DestinationCard 
+              name="Munnar" 
+              slug="munnar"
+              image="/src/assets/destinations/andaman.jpg"
+              description="Kerala's hill station gem with rolling tea plantations, misty mountains, and cool climate perfect for relaxation."
+            />
+            <DestinationCard 
+              name="Kodaikkanal" 
+              slug="kodaikkanal"
+              image="/src/assets/destinations/lakshadweep.jpg"
+              description="The Princess of Hill Stations in Tamil Nadu with beautiful lakes, misty hills, and peaceful atmosphere."
+            />
+            <DestinationCard 
+              name="Goa" 
+              slug="goa"
+              image="/src/assets/destinations/maldives.jpg"
+              description="India's beach paradise with golden sands, vibrant nightlife, Portuguese heritage, and delicious seafood."
             />
           </div>
         </div>
