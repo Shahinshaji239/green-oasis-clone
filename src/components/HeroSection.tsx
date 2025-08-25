@@ -21,6 +21,11 @@ const HeroSection = () => {
       src: "https://videos.pexels.com/video-files/4992764/4992764-uhd_2560_1440_25fps.mp4",
       title: "Cultural Journeys",
       description: "Immerse yourself in rich cultural experiences"
+    },
+    {
+      src: "https://videos.pexels.com/video-files/2169880/2169880-uhd_2560_1440_25fps.mp4",
+      title: "Kerala Hill Station",
+      description: "Journey through the scenic Gap road in Munnar, Kerala"
     }
   ];
 

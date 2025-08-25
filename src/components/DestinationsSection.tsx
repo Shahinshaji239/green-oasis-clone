@@ -9,12 +9,12 @@ import thailandImage from "@/assets/destinations/thailand.jpg";
 import turkeyImage from "@/assets/destinations/turkey.jpg";
 
 const destinations = [
-  { name: "Andaman", image: andamanImage, slug: "andaman" },
-  { name: "Lakshadweep", image: lakshadweepImage, slug: "lakshadweep" },
-  { name: "Maldives", image: maldivesImage, slug: "maldives" },
-  { name: "UAE", image: uaeImage, slug: "uae" },
-  { name: "Thailand", image: thailandImage, slug: "thailand" },
-  { name: "Turkey", image: turkeyImage, slug: "turkey" },
+  { name: "Hyderabad", image: uaeImage, slug: "hyderabad" },
+  { name: "Delhi, Agra", image: thailandImage, slug: "delhi-agra" },
+  { name: "Kashmir, Manali", image: turkeyImage, slug: "kashmir-manali" },
+  { name: "Munnar", image: andamanImage, slug: "munnar" },
+  { name: "Kodaikkanal", image: lakshadweepImage, slug: "kodaikkanal" },
+  { name: "Goa", image: maldivesImage, slug: "goa" },
 ];
 
 const DestinationsSection = () => {
@@ -80,8 +80,6 @@ const DestinationsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4 lg:-left-8" />
-          <CarouselNext className="hidden md:flex -right-4 lg:-right-8" />
         </Carousel>
 
         <div className="text-center mt-8 md:hidden">

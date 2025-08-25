@@ -1,10 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { Menu, Phone, Mail } from "lucide-react";
+import { Menu, Phone, Mail, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 import logoImage from "@/assets/green-oasis-logo.png";
 
 const Header = () => {
   const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   const navItems = [
     { name: "HOME", path: "/" },
@@ -77,12 +79,44 @@ const Header = () => {
                 CONTACT US
               </Button>
             </Link>
-            <button className="lg:hidden">
-              <Menu size={24} />
+            <button 
+              className="lg:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Navigation */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-background border-t shadow-lg">
+          <nav className="container mx-auto px-4 py-4">
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-sm font-medium transition-colors duration-300 ${
+                    location.pathname === item.path 
+                      ? "text-primary font-semibold" 
+                      : "text-foreground hover:text-primary"
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
+                <Button variant="contact" className="w-full">
+                  CONTACT US
+                </Button>
+              </Link>
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };
