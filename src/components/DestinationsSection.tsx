@@ -80,6 +80,8 @@ const DestinationsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
+          <CarouselPrevious className="hidden md:flex -left-4 bg-background/80 hover:bg-background border-border" />
+          <CarouselNext className="hidden md:flex -right-4 bg-background/80 hover:bg-background border-border" />
         </Carousel>
 
         <div className="text-center mt-8 md:hidden">
