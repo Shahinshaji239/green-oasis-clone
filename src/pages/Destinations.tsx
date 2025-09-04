@@ -4,12 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Phone, MapPin, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import andamanImage from "@/assets/destinations/andaman.jpg";
-import lakshadweepImage from "@/assets/destinations/lakshadweep.jpg";
-import maldivesImage from "@/assets/destinations/maldives.jpg";
-import uaeImage from "@/assets/destinations/uae.jpg";
-import thailandImage from "@/assets/destinations/thailand.jpg";
-import turkeyImage from "@/assets/destinations/turkey.jpg";
+import hyderabadImage from "@/assets/destinations/hyderabad.png";
+import agraImage from "@/assets/destinations/agra.png";
+import manaliImage from "@/assets/destinations/manali.png";
+import munnarImage from "@/assets/destinations/munnar.png";
+import kodaikanalImage from "@/assets/destinations/kodaikanal.png";
+import goaImage from "@/assets/destinations/goa.png";
 
 interface DestinationCardProps {
   name: string;
@@ -27,12 +27,12 @@ const DestinationCard = ({ name, image, description, slug }: DestinationCardProp
 
   // Map image paths to actual imports
   const imageMap: Record<string, string> = {
-    "/src/assets/destinations/andaman.jpg": andamanImage,
-    "/src/assets/destinations/lakshadweep.jpg": lakshadweepImage,
-    "/src/assets/destinations/maldives.jpg": maldivesImage,
-    "/src/assets/destinations/uae.jpg": uaeImage,
-    "/src/assets/destinations/thailand.jpg": thailandImage,
-    "/src/assets/destinations/turkey.jpg": turkeyImage,
+    "/src/assets/destinations/hyderabad.png": hyderabadImage,
+    "/src/assets/destinations/agra.png": agraImage,
+    "/src/assets/destinations/manali.png": manaliImage,
+    "/src/assets/destinations/munnar.png": munnarImage,
+    "/src/assets/destinations/kodaikanal.png": kodaikanalImage,
+    "/src/assets/destinations/goa.png": goaImage,
   };
 
   return (
@@ -101,37 +101,37 @@ const Destinations = () => {
             <DestinationCard 
               name="Hyderabad" 
               slug="hyderabad"
-              image="/src/assets/destinations/uae.jpg"
+              image="/src/assets/destinations/hyderabad.png"
               description="The City of Pearls offers rich history, delicious biryani, magnificent monuments, and modern IT culture in perfect harmony."
             />
             <DestinationCard 
               name="Delhi, Agra" 
               slug="delhi-agra"
-              image="/src/assets/destinations/thailand.jpg"
+              image="/src/assets/destinations/agra.png"
               description="Experience India's capital and the iconic Taj Mahal in this golden triangle tour featuring rich Mughal heritage."
             />
             <DestinationCard 
               name="Kashmir, Manali" 
               slug="kashmir-manali"
-              image="/src/assets/destinations/turkey.jpg"
+              image="/src/assets/destinations/manali.png"
               description="Paradise on earth with snow-capped mountains, pristine valleys, beautiful lakes, and adventure activities."
             />
             <DestinationCard 
               name="Munnar" 
               slug="munnar"
-              image="/src/assets/destinations/andaman.jpg"
+              image="/src/assets/destinations/munnar.png"
               description="Kerala's hill station gem with rolling tea plantations, misty mountains, and cool climate perfect for relaxation."
             />
             <DestinationCard 
               name="Kodaikkanal" 
               slug="kodaikkanal"
-              image="/src/assets/destinations/lakshadweep.jpg"
+              image="/src/assets/destinations/kodaikanal.png"
               description="The Princess of Hill Stations in Tamil Nadu with beautiful lakes, misty hills, and peaceful atmosphere."
             />
             <DestinationCard 
               name="Goa" 
               slug="goa"
-              image="/src/assets/destinations/maldives.jpg"
+              image="/src/assets/destinations/goa.png"
               description="India's beach paradise with golden sands, vibrant nightlife, Portuguese heritage, and delicious seafood."
             />
           </div>

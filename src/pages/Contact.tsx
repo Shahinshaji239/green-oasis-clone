@@ -3,10 +3,13 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Loader2 } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,12 +18,76 @@ const Contact = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Submit to Formspree
+             const response = await fetch("https://formspree.io/f/YOUR_NEW_FORM_ID", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+          _replyto: formData.email, // Formspree will use this as reply-to
+          _subject: `La Vida Holidays Contact: ${formData.subject}` // Custom subject line
+        })
+      });
+
+      if (response.ok) {
+        // Success
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for contacting La Vida Holidays. We'll get back to you within 24 hours.",
+        });
+        
+        // Reset form
+        setFormData({ 
+          name: "", 
+          email: "", 
+          phone: "", 
+          subject: "", 
+          message: "" 
+        });
+      } else {
+        // Error from Formspree
+        throw new Error("Failed to send message");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      
+      // Fallback to mailto if Formspree fails
+      const emailBody = `
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email}
+
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
+
+---
+This message was sent from La Vida Holidays contact form.
+      `.trim();
+      
+      const mailtoLink = `mailto:lavidaholidays@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(emailBody)}`;
+      window.location.href = mailtoLink;
+      
+      toast({
+        title: "Opening Email Client",
+        description: "We're opening your email client as a backup. Please send the email to complete your inquiry.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -58,6 +125,7 @@ const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                       placeholder="Your full name"
                     />
                   </div>
@@ -71,6 +139,7 @@ const Contact = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      disabled={isSubmitting}
                       placeholder="Your phone number"
                     />
                   </div>
@@ -86,6 +155,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -100,6 +170,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -113,13 +184,21 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={isSubmitting}
                     placeholder="Tell us about your travel plans..."
                     rows={5}
                   />
                 </div>
 
-                <Button type="submit" className="w-full">
-                  Send Message
+                <Button type="submit" className="w-full" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Sending Message...
+                    </>
+                  ) : (
+                    "Send Message"
+                  )}
                 </Button>
               </form>
             </div>
@@ -142,8 +221,8 @@ const Contact = () => {
                     <Mail className="text-primary mt-1" size={20} />
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
-                      <p className="text-muted-foreground">info@greenoasistravel.com</p>
-                      <p className="text-muted-foreground">support@greenoasistravel.com</p>
+                      <p className="text-muted-foreground">lavidaholidays@gmail.com</p>
+                      <p className="text-muted-foreground">info@lavidaholidays.com</p>
                     </div>
                   </div>
 

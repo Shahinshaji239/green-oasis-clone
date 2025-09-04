@@ -1,0 +1,19 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+  color: rgb(34, 95, 62) !important; /* Force the color with !important */
+}
+
+.text-type__content {
+  color: rgb(34, 95, 62) !important; /* Ensure the content also gets the color */
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}

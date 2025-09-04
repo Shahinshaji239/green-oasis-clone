@@ -20,14 +20,14 @@ const Services = () => {
       features: ["Verified properties", "Best price guarantee", "Instant confirmation"]
     },
     {
-      title: "Visa Assistance",
-      description: "Complete visa processing support for hassle-free travel.",
-      features: ["Document guidance", "Fast processing", "Expert consultation"]
+      title: "School & College Tours",
+      description: "Educational tours designed for students to learn and explore new destinations.",
+      features: ["Educational itineraries", "Safety-first approach", "Learning experiences"]
     },
     {
-      title: "Travel Insurance",
-      description: "Comprehensive travel insurance for peace of mind during your trip.",
-      features: ["Medical coverage", "Trip cancellation", "24/7 emergency support"]
+      title: "Industrial Visit",
+      description: "Organized visits to industries and companies for educational and professional development.",
+      features: ["Factory tours", "Expert guidance", "Knowledge enhancement"]
     },
     {
       title: "Group Tours",
@@ -61,9 +61,7 @@ const Services = () => {
                     </li>
                   ))}
                 </ul>
-                <Button variant="outline" className="w-full">
-                  Learn More
-                </Button>
+               
               </div>
             ))}
           </div>

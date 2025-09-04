@@ -14,9 +14,8 @@ const Header = () => {
     { name: "DESTINATIONS", path: "/destinations" }, 
     { name: "PACKAGES", path: "/packages" },
     { name: "SERVICES", path: "/services" },
-    { name: "CONTACT", path: "/contact" },
     { name: "TESTIMONIALS", path: "/testimonials" },
-    { name: "BLOG", path: "/blog" },
+    
   ];
 
   return (
@@ -28,7 +27,7 @@ const Header = () => {
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-1">
                 <Phone size={14} />
-                <span>+91 7736890053</span>
+                <span>+917736890053</span>
               </div>
               <div className="flex items-center gap-1">
                 <Mail size={14} />

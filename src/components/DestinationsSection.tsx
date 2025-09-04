@@ -1,20 +1,20 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import andamanImage from "@/assets/destinations/andaman.jpg";
-import lakshadweepImage from "@/assets/destinations/lakshadweep.jpg";
-import maldivesImage from "@/assets/destinations/maldives.jpg";
-import uaeImage from "@/assets/destinations/uae.jpg";
-import thailandImage from "@/assets/destinations/thailand.jpg";
-import turkeyImage from "@/assets/destinations/turkey.jpg";
+import hyderabadImage from "@/assets/destinations/hyderabad.png";
+import agraImage from "@/assets/destinations/agra.png";
+import manaliImage from "@/assets/destinations/manali.png";
+import munnarImage from "@/assets/destinations/munnar.png";
+import kodaikanalImage from "@/assets/destinations/kodaikanal.png";
+import goaImage from "@/assets/destinations/goa.png";
 
 const destinations = [
-  { name: "Hyderabad", image: uaeImage, slug: "hyderabad" },
-  { name: "Delhi, Agra", image: thailandImage, slug: "delhi-agra" },
-  { name: "Kashmir, Manali", image: turkeyImage, slug: "kashmir-manali" },
-  { name: "Munnar", image: andamanImage, slug: "munnar" },
-  { name: "Kodaikkanal", image: lakshadweepImage, slug: "kodaikkanal" },
-  { name: "Goa", image: maldivesImage, slug: "goa" },
+  { name: "Hyderabad", image: hyderabadImage, slug: "hyderabad" },
+  { name: "Delhi, Agra", image: agraImage, slug: "delhi-agra" },
+  { name: "Kashmir, Manali", image: manaliImage, slug: "kashmir-manali" },
+  { name: "Munnar", image: munnarImage, slug: "munnar" },
+  { name: "Kodaikkanal", image: kodaikanalImage, slug: "kodaikkanal" },
+  { name: "Goa", image: goaImage, slug: "goa" },
 ];
 
 const DestinationsSection = () => {
@@ -80,8 +80,7 @@ const DestinationsSection = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="hidden md:flex -left-4 bg-background/80 hover:bg-background border-border" />
-          <CarouselNext className="hidden md:flex -right-4 bg-background/80 hover:bg-background border-border" />
+
         </Carousel>
 
         <div className="text-center mt-8 md:hidden">

@@ -1,5 +1,6 @@
-import { MapPin, Phone, Mail, Facebook, Instagram, Twitter, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react";
 import logoImage from "@/assets/green-oasis-logo.png";
+import whatsappImage from "@/assets/whatsapp.png";
 
 const Footer = () => {
   return (
@@ -12,7 +13,7 @@ const Footer = () => {
               <img 
                 src={logoImage} 
                 alt="La Vida Holidays" 
-                className="h-10 w-10 object-contain brightness-0 invert"
+                className="h-12 w-12 object-contain"
               />
               <div>
                 <h3 className="text-xl font-bold">La Vida Holidays</h3>
@@ -29,7 +30,7 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Quick Links</h4>
             <ul className="space-y-2 text-sm">
-              {["Home", "About Us", "Destinations", "Services", "Contact", "Blog", "Testimonials"].map((link) => (
+              {["Home", "About Us", "Destinations", "Services", "Contact", "Testimonials"].map((link) => (
                 <li key={link}>
                   <a href="#" className="opacity-80 hover:opacity-100 transition-opacity">
                     {link}
@@ -66,17 +67,17 @@ const Footer = () => {
           <div className="space-y-4">
             <h4 className="text-lg font-semibold">Follow Us</h4>
             <div className="flex gap-3">
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+              <a href="" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+              <a href="https://www.instagram.com/lavida.holidays?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw%3D%3D" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                 <Instagram size={20} />
               </a>
               <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
-                <MessageCircle size={20} />
+              <a href="https://wa.me/917736890053" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+                <img src={whatsappImage} alt="WhatsApp" className="w-5 h-5" />
               </a>
             </div>
             <p className="text-sm opacity-80">
@@ -95,12 +96,12 @@ const Footer = () => {
       {/* WhatsApp Float Button */}
       <a
         href="https://wa.me/917736890053"
-        className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20BA5A] text-white p-4 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 z-50 animate-pulse"
+        className="fixed bottom-6 right-6 p-2 z-50 hover:scale-110 transition-transform duration-300"
         target="_blank"
         rel="noopener noreferrer"
         title="Chat with us on WhatsApp"
       >
-        <MessageCircle size={24} fill="currentColor" />
+        <img src={whatsappImage} alt="WhatsApp" className="w-12 h-12" />
       </a>
     </footer>
   );

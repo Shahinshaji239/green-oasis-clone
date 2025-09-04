@@ -5,8 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Star } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Testimonials = () => {
+  const { toast } = useToast();
   const [reviewData, setReviewData] = useState({
     name: "",
     email: "",
@@ -63,7 +65,10 @@ const Testimonials = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Review submitted:", reviewData);
-    alert("Thank you for your review! It will be published after moderation.");
+    toast({
+      title: "La Vida Holidays",
+      description: "Thank you for your review! It will be published after moderation.",
+    });
     setReviewData({ name: "", email: "", destination: "", rating: 5, review: "" });
   };
 
