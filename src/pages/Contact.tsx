@@ -212,8 +212,8 @@ This message was sent from La Vida Holidays contact form.
                     <Phone className="text-primary mt-1" size={20} />
                     <div>
                       <h3 className="font-semibold text-foreground">Phone</h3>
-                      <p className="text-muted-foreground">+91 9876543210</p>
-                      <p className="text-muted-foreground">+91 9876543211</p>
+                      <p className="text-muted-foreground">+91 7736890053</p>
+                      <p className="text-muted-foreground">+91 6282130048</p>
                     </div>
                   </div>
 
@@ -231,9 +231,9 @@ This message was sent from La Vida Holidays contact form.
                     <div>
                       <h3 className="font-semibold text-foreground">Address</h3>
                       <p className="text-muted-foreground">
-                        123 Travel Street<br />
-                        Tourism District<br />
-                        Mumbai, Maharashtra 400001
+                      La Vida Holidays<br />
+                  Gyan Pravesh, Old Block, RCSS,<br />
+                  Kalamassery, Ernakulam, Kerala
                       </p>
                     </div>
                   </div>
@@ -254,7 +254,7 @@ This message was sent from La Vida Holidays contact form.
                 <p className="text-muted-foreground mb-3">
                   Need urgent assistance during your travel? Our emergency helpline is available round the clock.
                 </p>
-                <p className="font-semibold text-primary">Emergency: +91 9876543299</p>
+                <p className="font-semibold text-primary">Emergency: +91 6282130048</p>
               </div>
             </div>
           </div>
