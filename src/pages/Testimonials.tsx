@@ -3,7 +3,6 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Star } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -13,52 +12,45 @@ const Testimonials = () => {
     name: "",
     email: "",
     destination: "",
-    rating: 5,
     review: ""
   });
 
   const testimonials = [
     {
       name: "Priya Sharma",
-      destination: "Maldives",
-      rating: 5,
-      review: "Green Oasis made our honeymoon absolutely perfect! The resort was stunning and the service was exceptional. Every detail was taken care of.",
-      date: "December 2023"
+      destination: "Hyderabad",
+      review: "La Vida Holidays made our Hyderabad trip absolutely perfect! The historical monuments were stunning and the service was exceptional. Every detail was taken care of.",
+      date: "December 2024"
     },
     {
       name: "Rajesh Kumar",
-      destination: "Thailand",
-      rating: 5,
-      review: "Amazing experience with Green Oasis! The local guides were knowledgeable and the itinerary was well-planned. Highly recommended!",
-      date: "November 2023"
+      destination: "Delhi, Agra",
+      review: "Amazing experience with La Vida Holidays! The Taj Mahal visit was breathtaking and the local guides were knowledgeable. The itinerary was well-planned. Highly recommended!",
+      date: "November 2024"
     },
     {
       name: "Anita Patel",
-      destination: "UAE",
-      rating: 4,
-      review: "Great service and competitive prices. The Dubai trip was memorable and the hotel arrangements were excellent.",
-      date: "October 2023"
+      destination: "Kashmir, Manali",
+      review: "Great service and competitive prices. The Kashmir and Manali trip was memorable and the hotel arrangements were excellent. The mountain views were spectacular.",
+      date: "October 2024"
     },
     {
       name: "Vikram Singh",
-      destination: "Turkey",
-      rating: 5,
-      review: "Outstanding service! The cultural tour of Istanbul was incredible. Green Oasis exceeded our expectations in every way.",
-      date: "September 2023"
+      destination: "Munnar",
+      review: "Outstanding service! The tea plantation tours in Munnar were incredible. La Vida Holidays exceeded our expectations in every way. The hill station experience was unforgettable.",
+      date: "September 2024"
     },
     {
       name: "Meera Nair",
-      destination: "Andaman",
-      rating: 5,
-      review: "The Andaman trip was a dream come true! Crystal clear waters, beautiful beaches, and seamless arrangements. Thank you Green Oasis!",
-      date: "August 2023"
+      destination: "Kodaikkanal",
+      review: "The Kodaikkanal trip was a dream come true! The cool climate, beautiful lakes, and seamless arrangements made it perfect. Thank you La Vida Holidays!",
+      date: "August 2024"
     },
     {
       name: "Amit Gupta",
-      destination: "Lakshadweep",
-      rating: 4,
-      review: "Peaceful and serene experience in Lakshadweep. The coral reefs were breathtaking and the accommodation was comfortable.",
-      date: "July 2023"
+      destination: "Goa",
+      review: "Peaceful and fun experience in Goa. The beaches were beautiful and the accommodation was comfortable. La Vida Holidays made our vacation stress-free and enjoyable.",
+      date: "July 2024"
     }
   ];
 
@@ -69,26 +61,16 @@ const Testimonials = () => {
       title: "La Vida Holidays",
       description: "Thank you for your review! It will be published after moderation.",
     });
-    setReviewData({ name: "", email: "", destination: "", rating: 5, review: "" });
+    setReviewData({ name: "", email: "", destination: "", review: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const value = e.target.name === 'rating' ? parseInt(e.target.value) : e.target.value;
     setReviewData({
       ...reviewData,
-      [e.target.name]: value
+      [e.target.name]: e.target.value
     });
   };
 
-  const renderStars = (rating: number) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        size={16}
-        className={`${i < rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-300'}`}
-      />
-    ));
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -99,16 +81,13 @@ const Testimonials = () => {
             Customer Reviews
           </h1>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Read what our customers say about their amazing experiences with Green Oasis Travel.
+            Read what our customers say about their amazing experiences with La Vida Holidays.
           </p>
 
           {/* Reviews Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-card border rounded-xl p-6 shadow-md">
-                <div className="flex items-center gap-2 mb-3">
-                  {renderStars(testimonial.rating)}
-                </div>
                 <p className="text-muted-foreground mb-4 italic">"{testimonial.review}"</p>
                 <div className="border-t pt-4">
                   <h4 className="font-semibold text-foreground">{testimonial.name}</h4>
@@ -166,34 +145,16 @@ const Testimonials = () => {
                   className="w-full px-3 py-2 border border-input bg-background rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 >
                   <option value="">Select destination</option>
-                  <option value="Andaman">Andaman</option>
-                  <option value="Lakshadweep">Lakshadweep</option>
-                  <option value="Maldives">Maldives</option>
-                  <option value="UAE">UAE</option>
-                  <option value="Thailand">Thailand</option>
-                  <option value="Turkey">Turkey</option>
+                  <option value="Hyderabad">Hyderabad</option>
+                  <option value="Delhi, Agra">Delhi, Agra</option>
+                  <option value="Kashmir, Manali">Kashmir, Manali</option>
+                  <option value="Munnar">Munnar</option>
+                  <option value="Kodaikkanal">Kodaikkanal</option>
+                  <option value="Goa">Goa</option>
                   <option value="Other">Other</option>
                 </select>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground mb-2">
-                  Rating *
-                </label>
-                <select
-                  name="rating"
-                  value={reviewData.rating}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-3 py-2 border border-input bg-background rounded-md text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                >
-                  <option value={5}>⭐⭐⭐⭐⭐ Excellent</option>
-                  <option value={4}>⭐⭐⭐⭐ Very Good</option>
-                  <option value={3}>⭐⭐⭐ Good</option>
-                  <option value={2}>⭐⭐ Fair</option>
-                  <option value={1}>⭐ Poor</option>
-                </select>
-              </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
@@ -204,7 +165,7 @@ const Testimonials = () => {
                   value={reviewData.review}
                   onChange={handleChange}
                   required
-                  placeholder="Share your experience with Green Oasis Travel..."
+                  placeholder="Share your experience with La Vida Holidays..."
                   rows={5}
                 />
               </div>
