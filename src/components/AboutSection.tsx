@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { useRef } from "react";
-import aboutImage from "@/assets/about-us.png";
+// Hosted about us image URL
+const aboutImage = "https://ik.imagekit.io/td5ykows9/about-us.png?updatedAt=1757059609139";
 import ScrollReveal from "./ScrollReveal";
 
 const AboutSection = () => {

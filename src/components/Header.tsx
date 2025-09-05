@@ -2,7 +2,8 @@ import { Button } from "@/components/ui/button";
 import { Menu, Phone, Mail, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import logoImage from "@/assets/green-oasis-logo.png";
+// Hosted logo image URL
+const logoImage = "https://ik.imagekit.io/td5ykows9/logo.png?updatedAt=1757005962509";
 
 const Header = () => {
   const location = useLocation();

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
-import heroBanner from "@/assets/hero-banner.jpg";
+// Hosted hero banner image URL
+const heroBanner = "https://ik.imagekit.io/td5ykows9/hero-banner.jpg?updatedAt=1757059543862";
 import TextType from './TextType';
 
 const HeroSection = () => {

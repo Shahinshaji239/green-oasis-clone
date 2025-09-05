@@ -24,7 +24,7 @@ const Contact = () => {
 
     try {
       // Submit to Formspree
-             const response = await fetch("https://formspree.io/f/YOUR_NEW_FORM_ID", {
+             const response = await fetch("https://formspree.io/f/xqadgwkz", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -222,7 +222,6 @@ This message was sent from La Vida Holidays contact form.
                     <div>
                       <h3 className="font-semibold text-foreground">Email</h3>
                       <p className="text-muted-foreground">lavidaholidays@gmail.com</p>
-                      <p className="text-muted-foreground">info@lavidaholidays.com</p>
                     </div>
                   </div>
 
@@ -232,7 +231,7 @@ This message was sent from La Vida Holidays contact form.
                       <h3 className="font-semibold text-foreground">Address</h3>
                       <p className="text-muted-foreground">
                       La Vida Holidays<br />
-                  Gyan Pravesh, Old Block, RCSS,<br />
+                    Gyan Prayag, Old Block, RCSS,<br />
                   Kalamassery, Ernakulam, Kerala
                       </p>
                     </div>

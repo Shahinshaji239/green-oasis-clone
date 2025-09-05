@@ -1,6 +1,7 @@
 import { MapPin, Phone, Mail, Facebook, Instagram, Twitter } from "lucide-react";
-import logoImage from "@/assets/green-oasis-logo.png";
-import whatsappImage from "@/assets/whatsapp.png";
+// Hosted image URLs
+const logoImage = "https://ik.imagekit.io/td5ykows9/logo.png?updatedAt=1757005962509";
+const whatsappImage = "https://ik.imagekit.io/td5ykows9/whatsapp.png?updatedAt=1757059575934";
 
 const Footer = () => {
   return (
@@ -21,8 +22,7 @@ const Footer = () => {
               </div>
             </div>
             <p className="text-sm opacity-90 leading-relaxed">
-              Your trusted travel partner for 14+ years. We create remarkable memories 
-              and unforgettable journeys across the globe.
+            Crafting unforgettable journeys with trusted services and support. Explore the world with us today!
             </p>
           </div>
 
@@ -48,7 +48,7 @@ const Footer = () => {
                 <MapPin size={16} className="mt-1 flex-shrink-0" />
                 <span className="opacity-90">
                   La Vida Holidays<br />
-                  Gyan Pravesh, Old Block, RCSS,<br />
+                  Gyan Prayag, Old Block, RCSS,<br />
                   Kalamassery, Ernakulam, Kerala
                 </span>
               </div>
@@ -58,7 +58,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} />
-                <span className="opacity-90">info@lavidaholidays.com</span>
+                <span className="opacity-90">www.lavidaholidays.com</span>
               </div>
             </div>
           </div>

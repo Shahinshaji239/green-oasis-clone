@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import hyderabadImage from "@/assets/destinations/hyderabad.png";
-import agraImage from "@/assets/destinations/agra.png";
-import manaliImage from "@/assets/destinations/manali.png";
-import munnarImage from "@/assets/destinations/munnar.png";
-import kodaikanalImage from "@/assets/destinations/kodaikanal.png";
-import goaImage from "@/assets/destinations/goa.png";
+// Hosted image URLs - replace with your actual hosted URLs
+const hyderabadImage = "https://ik.imagekit.io/td5ykows9/delhi.png?updatedAt=1757005934964";
+const agraImage = "https://ik.imagekit.io/td5ykows9/agra.png?updatedAt=1757005909557";
+const manaliImage = "https://ik.imagekit.io/td5ykows9/manali.png?updatedAt=1757005896550";
+const munnarImage = "https://ik.imagekit.io/td5ykows9/munnar.png?updatedAt=1757005882980";
+const kodaikanalImage = "https://ik.imagekit.io/td5ykows9/kodaikanal.png?updatedAt=1757005869002";
+const goaImage = "https://ik.imagekit.io/td5ykows9/goa.png?updatedAt=1757005855216";
 
 
 const destinationData = {
@@ -324,7 +325,7 @@ const DestinationDetails = () => {
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">Email Us</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">info@lavidaholidays.com</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">lavidaholidays@gmail.com</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">Office Hours</h4>
@@ -341,7 +342,7 @@ const DestinationDetails = () => {
                 <CardContent className="space-y-2 sm:space-y-3">
                   <div className="flex items-start gap-2 sm:gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span className="text-xs sm:text-sm text-muted-foreground">14+ Years of Experience</span>
+                    <span className="text-xs sm:text-sm text-muted-foreground"> Years of Experience</span>
                   </div>
                   <div className="flex items-start gap-2 sm:gap-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>

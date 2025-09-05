@@ -4,12 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { MessageCircle, Phone, MapPin, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import hyderabadImage from "@/assets/destinations/hyderabad.png";
-import agraImage from "@/assets/destinations/agra.png";
-import manaliImage from "@/assets/destinations/manali.png";
-import munnarImage from "@/assets/destinations/munnar.png";
-import kodaikanalImage from "@/assets/destinations/kodaikanal.png";
-import goaImage from "@/assets/destinations/goa.png";
+// Hosted image URLs - same as DestinationDetails.tsx
+const hyderabadImage = "https://ik.imagekit.io/td5ykows9/delhi.png?updatedAt=1757005934964";
+const agraImage = "https://ik.imagekit.io/td5ykows9/agra.png?updatedAt=1757005909557";
+const manaliImage = "https://ik.imagekit.io/td5ykows9/manali.png?updatedAt=1757005896550";
+const munnarImage = "https://ik.imagekit.io/td5ykows9/munnar.png?updatedAt=1757005882980";
+const kodaikanalImage = "https://ik.imagekit.io/td5ykows9/kodaikanal.png?updatedAt=1757005869002";
+const goaImage = "https://ik.imagekit.io/td5ykows9/goa.png?updatedAt=1757005855216";
 
 interface DestinationCardProps {
   name: string;

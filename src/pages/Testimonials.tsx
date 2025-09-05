@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Loader2 } from "lucide-react";
 
 const Testimonials = () => {
   const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [reviewData, setReviewData] = useState({
     name: "",
     email: "",
@@ -54,14 +56,57 @@ const Testimonials = () => {
     }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Review submitted:", reviewData);
-    toast({
-      title: "La Vida Holidays",
-      description: "Thank you for your review! It will be published after moderation.",
-    });
-    setReviewData({ name: "", email: "", destination: "", review: "" });
+    setIsSubmitting(true);
+
+    try {
+      // Submit to Formspree
+      const response = await fetch("https://formspree.io/f/xqadgwkz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: reviewData.name,
+          email: reviewData.email,
+          destination: reviewData.destination,
+          review: reviewData.review,
+          type: "Customer Review",
+          _replyto: reviewData.email,
+          _subject: `La Vida Holidays Review: ${reviewData.destination}`
+        })
+      });
+
+      if (response.ok) {
+        // Success
+        toast({
+          title: "Review Submitted Successfully!",
+          description: "Thank you for your review! It will be published after moderation.",
+        });
+        
+        // Reset form
+        setReviewData({ name: "", email: "", destination: "", review: "" });
+      } else {
+        throw new Error("Failed to submit review");
+      }
+    } catch (error) {
+      // Fallback to mailto if Formspree fails
+      const subject = `La Vida Holidays Review: ${reviewData.destination}`;
+      const body = `Name: ${reviewData.name}\nEmail: ${reviewData.email}\nDestination: ${reviewData.destination}\n\nReview:\n${reviewData.review}`;
+      const mailtoUrl = `mailto:lavidaholidays@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailtoUrl;
+      
+      toast({
+        title: "Review Submitted!",
+        description: "Your review has been sent via email. Thank you for your feedback!",
+      });
+      
+      // Reset form
+      setReviewData({ name: "", email: "", destination: "", review: "" });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -170,8 +215,15 @@ const Testimonials = () => {
                 />
               </div>
 
-              <Button type="submit" className="w-full">
-                Submit Review
+              <Button type="submit" className="w-full" disabled={isSubmitting}>
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  "Submit Review"
+                )}
               </Button>
             </form>
           </div>
