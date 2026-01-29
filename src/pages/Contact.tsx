@@ -212,8 +212,9 @@ This message was sent from La Vida Holidays contact form.
                     <Phone className="text-primary mt-1" size={20} />
                     <div>
                       <h3 className="font-semibold text-foreground">Phone</h3>
+                      <p className="text-muted-foreground">+91 9497098453</p>
                       <p className="text-muted-foreground">+91 7736890053</p>
-                      <p className="text-muted-foreground">+91 6282130048</p>
+                      
                     </div>
                   </div>
 

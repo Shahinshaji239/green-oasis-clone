@@ -321,7 +321,7 @@ const DestinationDetails = () => {
                 <CardContent className="space-y-3 sm:space-y-4">
                   <div>
                     <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">Call Us</h4>
-                    <p className="text-muted-foreground text-sm sm:text-base">+91 7736890053</p>
+                    <p className="text-muted-foreground text-sm sm:text-base">+91 9497098453</p>
                   </div>
                   <div>
                     <h4 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">Email Us</h4>
