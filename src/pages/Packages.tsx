@@ -86,19 +86,19 @@ const packages = {
 const Packages = () => {
   const handlePackageInquiry = (packageName: string, duration: string) => {
     const message = `Hi La Vida Holidays! I'm interested in the ${packageName} package (${duration.replace('-', ' ')}). Could you please provide more details and pricing?`;
-    const whatsappUrl = `https://wa.me/917736890053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919497098453?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   const handleCustomPackage = () => {
     const message = `Hi La Vida Holidays! I'd like to create a custom travel package. Can you help me plan my trip?`;
-    const whatsappUrl = `https://wa.me/917736890053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919497098453?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
   const handleContactExpert = () => {
     const message = `Hi La Vida Holidays! I need expert consultation for planning my vacation. Please help me choose the perfect package.`;
-    const whatsappUrl = `https://wa.me/917736890053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919497098453?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
@@ -181,7 +181,7 @@ const Packages = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <div className="text-center">
                     <h4 className="font-semibold text-foreground mb-1">Call Us</h4>
-                    <p className="text-muted-foreground">+91 7736890053</p>
+                    <p className="text-muted-foreground">+91 9497098453</p>
                   </div>
                   <div className="text-center">
                     <h4 className="font-semibold text-foreground mb-1">Email Us</h4>

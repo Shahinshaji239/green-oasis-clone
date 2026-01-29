@@ -165,7 +165,7 @@ const DestinationDetails = () => {
 
   const handleCustomPackage = () => {
     const message = `Hi La Vida Holidays! I'd like to create a custom package for ${destination.name}. Can you help me plan my trip?`;
-    const whatsappUrl = `https://wa.me/917736890053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919497098453?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 

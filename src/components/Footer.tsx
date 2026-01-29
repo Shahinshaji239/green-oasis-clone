@@ -58,7 +58,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-3">
                 <Mail size={16} />
-                <span className="opacity-90">www.lavidaholidays.com</span>
+                <span className="opacity-90">lavidaholidays@gmail.com</span>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ const Footer = () => {
               <a href="#" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                 <Twitter size={20} />
               </a>
-              <a href="https://wa.me/917736890053" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
+              <a href="https://wa.me/919497098453" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
                 <img src={whatsappImage} alt="WhatsApp" className="w-5 h-5" />
               </a>
             </div>
@@ -95,7 +95,7 @@ const Footer = () => {
 
       {/* WhatsApp Float Button */}
       <a
-        href="https://wa.me/917736890053"
+        href="https://wa.me/919497098453"
         className="fixed bottom-6 right-6 p-2 z-50 hover:scale-110 transition-transform duration-300"
         target="_blank"
         rel="noopener noreferrer"

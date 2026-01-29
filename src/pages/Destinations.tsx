@@ -22,7 +22,7 @@ interface DestinationCardProps {
 const DestinationCard = ({ name, image, description, slug }: DestinationCardProps) => {
   const handleInquiry = () => {
     const message = `Hi La Vida Holidays! I'm interested in visiting ${name}. Could you please provide package details and pricing?`;
-    const whatsappUrl = `https://wa.me/917736890053?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/919497098453?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
 
